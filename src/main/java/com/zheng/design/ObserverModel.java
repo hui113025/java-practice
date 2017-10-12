@@ -11,12 +11,14 @@ import java.util.Observable;
 public class ObserverModel {
 
     public static void main(String[] args) {
-        WeatherData weatherData = new WeatherData();
-        CurrentConditionDisplay conditionDisplay = new CurrentConditionDisplay(weatherData);
+        WeatherData weatherData = new WeatherData(); //主题
+        CurrentConditionDisplay conditionDisplay = new CurrentConditionDisplay(weatherData); //观察者
+        //主题对象（WeatherData）改变时 依赖的对象（CurrentConditionDisplay）会收到通知
         weatherData.setMeasurements(80, 65, 30.4f);
 
-        WeatherDataForObservable weatherObservable = new WeatherDataForObservable();
-        StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherObservable);
+        WeatherDataForObservable weatherObservable = new WeatherDataForObservable(); //主题
+        StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherObservable); //观察者
+        //主题对象（WeatherData）改变时 依赖的对象（CurrentConditionDisplay）会收到通知
         weatherObservable.setMeasurements(90, 75, 40.4f);
     }
 
@@ -170,7 +172,7 @@ class WeatherDataForObservable extends Observable {
 }
 
 /**
- * 目前状况布告板
+ * 目前状况布告板 观察者
  * 显示温度、湿度
  */
 class CurrentConditionDisplay implements Observer, DisplayElement {
@@ -204,7 +206,7 @@ class CurrentConditionDisplay implements Observer, DisplayElement {
 }
 
 /**
- * 统计布告板
+ * 统计布告板 观察者
  */
 class StatisticsDisplay implements java.util.Observer, DisplayElement {
     Observable observable;
