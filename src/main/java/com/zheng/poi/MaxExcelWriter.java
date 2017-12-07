@@ -37,7 +37,6 @@ public class MaxExcelWriter {
 	public <T> byte[] exportExcel(String title, String[] headers, Collection<T> dataSet, String pattern) {
 		// 声明一个工作薄
 		SXSSFWorkbook workbook = new SXSSFWorkbook(10000);
-		Font font3 = workbook.createFont();
 		// 生成一个表格
 		// 生成一个样式
 		CellStyle style = workbook.createCellStyle();
@@ -56,21 +55,8 @@ public class MaxExcelWriter {
 		font.setBold(true);
 		// 把字体应用到当前的样式
 		style.setFont(font);
-		// 生成并设置另一个样式
-		CellStyle style2 = workbook.createCellStyle();
-		style2.setFillForegroundColor(HSSFColor.LIGHT_YELLOW.index);
-		style2.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-		style2.setBorderBottom(BorderStyle.THIN);
-		style2.setBorderLeft(BorderStyle.THIN);
-		style2.setBorderRight(BorderStyle.THIN);
-		style2.setBorderTop(BorderStyle.THIN);
-		style2.setAlignment(HorizontalAlignment.CENTER);
-		style2.setVerticalAlignment(VerticalAlignment.CENTER);
-		// 生成另一个字体
+
 		Font font2 = workbook.createFont();
-		font2.setBold(true);
-		// 把字体应用到当前的样式
-		style2.setFont(font2);
 		Sheet sheet = null;
 		Row row = null;
 		int index = 0;
@@ -111,7 +97,7 @@ public class MaxExcelWriter {
 				Field[] fields = t.getClass().getDeclaredFields();
 				for (int i = 0; i < fields.length; i++) {
 					Cell cell = row.createCell(i);
-					cell.setCellStyle(style2);
+					cell.setCellStyle(style);
 					Field field = fields[i];
 					String fieldName = field.getName();
 
@@ -165,8 +151,8 @@ public class MaxExcelWriter {
 						} else {
 							XSSFRichTextString richString = new XSSFRichTextString(
 									textValue);
-							font3.setColor(HSSFColor.BLUE.index);
-							richString.applyFont(font3);
+							font2.setColor(HSSFColor.BLUE.index);
+							richString.applyFont(font2);
 							cell.setCellValue(richString);
 						}
 					}
