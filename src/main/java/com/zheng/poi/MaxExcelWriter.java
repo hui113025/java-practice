@@ -156,7 +156,6 @@ public class MaxExcelWriter {
 							cell.setCellValue(richString);
 						}
 					}
-				
 				}
 			}
 			baos = new ByteArrayOutputStream();
@@ -164,7 +163,7 @@ public class MaxExcelWriter {
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new RuntimeException("poi处理出错");
-		} finally{
+		} finally {
 			try {
 				workbook.close();
 			} catch (IOException e) {
