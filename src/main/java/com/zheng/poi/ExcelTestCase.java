@@ -34,7 +34,7 @@ public class ExcelTestCase {
     @Test
     public void createMax() throws Exception {
         List<People> list = new ArrayList<People>();
-        for(int i=0; i<500; i++){
+        for(int i=0; i<500000; i++){
         	 People people = new People("admin"+i,"password"+i,null,null);
         	 list.add(people);
         }
