@@ -43,11 +43,12 @@ public class DecoratorModel {
 
         //java.io 添加装饰
         try {
+            String fullPath = Thread.currentThread().getContextClassLoader().getResource("design/DecoratorModel.txt").getPath();
             int c;
             InputStream in =
                     new LowerCaseInputStream(
                             new BufferedInputStream(
-                                    new FileInputStream("F:\\idea_workspace\\java-practice\\src\\main\\java\\com\\zheng\\design\\DecoratorModel.txt")));
+                                    new FileInputStream(fullPath)));
             while ((c = in.read()) >= 0) {
                 System.out.println((char) c);
             }
