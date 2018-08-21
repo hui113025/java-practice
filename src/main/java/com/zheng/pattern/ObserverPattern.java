@@ -8,7 +8,7 @@ import java.util.Observable;
  * 观察者模式
  * 在对象之间定义一对多的依赖，当一个对象改变状态，依赖它的对象都会收到通知，并自动更新。例如：杂志订阅与取消、猎头与求职者。
  */
-public class ObserverModel {
+public class ObserverPattern {
 
     public static void main(String[] args) {
         WeatherData weatherData = new WeatherData(); //主题
@@ -62,10 +62,12 @@ class WeatherData implements Subject {
         observers = new ArrayList<Observer>();
     }
 
+    @Override
     public void registerObserver(Observer o) {
         observers.add(o);
     }
 
+    @Override
     public void removeObserver(Observer o) {
         int i = observers.indexOf(o);
         if (i >= 0) {
@@ -73,6 +75,7 @@ class WeatherData implements Subject {
         }
     }
 
+    @Override
     public void notifyObservers() {
         for (Observer observer : observers) {
             observer.update(temperature, humidity, pressure);
@@ -185,6 +188,7 @@ class CurrentConditionDisplay implements Observer, DisplayElement {
         weatherData.registerObserver(this);
     }
 
+    @Override
     public void update(float temp, float humidity, float pressure) {
         this.temperature = temperature;
         this.humidity = humidity;
@@ -200,6 +204,7 @@ class CurrentConditionDisplay implements Observer, DisplayElement {
         }
     }
 
+    @Override
     public void display() {
         System.out.println("自定义方法：" + temperature + "℃ and " + humidity + "%RH");
     }
@@ -219,6 +224,7 @@ class StatisticsDisplay implements java.util.Observer, DisplayElement {
         observable.addObserver(this);
     }
 
+    @Override
     public void update(Observable obs, Object arg) {
         if (obs instanceof WeatherDataForObservable) {
             WeatherDataForObservable weatherData = (WeatherDataForObservable) obs;
@@ -229,6 +235,7 @@ class StatisticsDisplay implements java.util.Observer, DisplayElement {
         }
     }
 
+    @Override
     public void display() {
         System.out.println("内置方法：" + temperature + "℃ and " + humidity + "%RH" + " and " + pressure + "Pa");
     }

@@ -9,7 +9,7 @@ package com.zheng.pattern;
  * factoryMethod()：abstract Product factoryMethod()
  * ConcreteCreator：实现factoryMethod()制造产品
  */
-public class FactoryMethodModel {
+public class FactoryMethodPattern {
 
     public static void main(String[] args) {
         PizzaStore2 store = new NyPizzaStore();

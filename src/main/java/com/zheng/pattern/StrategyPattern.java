@@ -5,7 +5,7 @@ package com.zheng.pattern;
  * 策略模式
  * 定义算法族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化独立与使用算法的客户。
  */
-public class StrategyModel {
+public class StrategyPattern {
 
     public static void main(String[] args) {
         //调用MallardDuck继承的performQuack、performFly方法，委托FlyBehavior、QuackBehavior对象处理，调用继承来的引用对象的quack()和fly()方法。
@@ -153,6 +153,7 @@ class ModelDuck extends Duck {
  * 建立FlyBehavior类型
  */
 class FlyRocketPowered implements FlyBehavior {
+    @Override
     public void fly() {
         System.out.println("火箭动力飞行！");
     }

@@ -4,7 +4,7 @@ package com.zheng.pattern;
  * Created by zhenghui on 2017/9/30.
  * 工厂模式之简单工厂：其实不是设计模式，是一种编程习惯
  */
-public class SimpleFactoryModel {
+public class SimpleFactoryPattern {
 
     public static void main(String[] args) {
         SimplePizzaFactory simplePizzaFactory = new SimplePizzaFactory();

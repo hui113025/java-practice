@@ -2,7 +2,7 @@ package com.zheng.pattern;
 
 import java.io.*;
 
-import static com.zheng.pattern.DecoratorModel.*;
+import static com.zheng.pattern.DecoratorPattern.*;
 
 /**
  * Created by zhenghui on 2017/9/30.
@@ -10,7 +10,7 @@ import static com.zheng.pattern.DecoratorModel.*;
  * 动态的将责任附加到对象上。想要扩展功能，装饰者提供有别于继承的另一种选择。
  * java.io 用了装饰者模式
  */
-public class DecoratorModel {
+public class DecoratorPattern {
 
     // 大小写转化 ctr+shift+U
     protected static final double BEVERAGE_ESPRESSO_PRICE = 1.99;

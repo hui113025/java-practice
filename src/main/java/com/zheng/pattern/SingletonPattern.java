@@ -4,7 +4,7 @@ package com.zheng.pattern;
  * Created by zhenghui on 2017/10/12.
  * 单例模式：确保一个类只有一个实例，并提供全局访问点。
  */
-public class SingletonModel {
+public class SingletonPattern {
 
     public static void main(String[] args) {
 

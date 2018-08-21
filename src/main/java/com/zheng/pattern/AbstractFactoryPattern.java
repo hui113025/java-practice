@@ -10,7 +10,7 @@ package com.zheng.pattern;
  * AbstractFamilyProduct：抽象产品族产品
  * AbstractFamilyConcreteProduct：抽象产品族具体产品
  */
-public class AbstractFactoryModel {
+public class AbstractFactoryPattern {
 
     public static void main(String[] args) {
         PizzaIngredientFactory factory = new NyPizzaIngredientFactory();
@@ -112,10 +112,12 @@ class NyPizzaIngredientFactory implements PizzaIngredientFactory {
     public NyPizzaIngredientFactory() {
     }
 
+    @Override
     public Dough createDough() {
         return new MyDough();
     }
 
+    @Override
     public Sauce createSauce() {
         return new MySauce();
     }
@@ -145,6 +147,7 @@ class MyDough implements Dough {
 
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -165,6 +168,7 @@ class MySauce implements Sauce {
 
     }
 
+    @Override
     public String getName() {
         return name;
     }

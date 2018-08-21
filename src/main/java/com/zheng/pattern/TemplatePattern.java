@@ -4,7 +4,7 @@ package com.zheng.pattern;
  * Created by zhenghui on 2018/8/21.
  * 模板模式
  */
-public class TemplateModel {
+public class TemplatePattern {
     //入口函数 运行用
     public static void main(String args[]) {
         AbstractClass eatFoodClass = new EatFoodClass();
