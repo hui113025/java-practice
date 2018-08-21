@@ -1,8 +1,8 @@
-package com.zheng.design;
+package com.zheng.pattern;
 
 import java.io.*;
 
-import static com.zheng.design.DecoratorModel.*;
+import static com.zheng.pattern.DecoratorModel.*;
 
 /**
  * Created by zhenghui on 2017/9/30.

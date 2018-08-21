@@ -1,4 +1,4 @@
-package com.zheng.design;
+package com.zheng.pattern;
 
 import java.util.ArrayList;
 import java.util.Observable;

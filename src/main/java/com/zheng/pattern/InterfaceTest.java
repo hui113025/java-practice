@@ -1,4 +1,4 @@
-package com.zheng.design;
+package com.zheng.pattern;
 
 /**
  * Created by zhenghui on 2017/9/28.

@@ -1,4 +1,4 @@
-package com.zheng.design;
+package com.zheng.pattern;
 
 /**
  * Created by zhenghui on 2017/9/28.
@@ -71,12 +71,14 @@ interface QuackBehavior {
 }
 
 class FlyWithwings implements FlyBehavior {
+    @Override
     public void fly() {
         System.out.println("我在飞！");
     }
 }
 
 class FlyNoWay implements FlyBehavior {
+    @Override
     public void fly() {
         System.out.println("我不能飞！");
     }
@@ -86,6 +88,7 @@ class FlyNoWay implements FlyBehavior {
  * 会呱呱叫
  */
 class Quack implements QuackBehavior {
+    @Override
     public void quack() {
         System.out.println("呱呱叫！");
     }
@@ -95,6 +98,7 @@ class Quack implements QuackBehavior {
  * 不会叫
  */
 class MuteQuack implements QuackBehavior {
+    @Override
     public void quack() {
         System.out.println("不会叫！");
     }
@@ -104,6 +108,7 @@ class MuteQuack implements QuackBehavior {
  * 吱吱叫
  */
 class Squeak implements QuackBehavior {
+    @Override
     public void quack() {
         System.out.println("吱吱叫！");
     }
