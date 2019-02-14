@@ -5,4 +5,6 @@ package com.zheng.proxy;
  */
 public interface Man {
     void look(String bookName);
+
+    String getName(String bookName);
 }

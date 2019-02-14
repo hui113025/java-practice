@@ -1,8 +1,5 @@
 package com.zheng.example;
 
-
-import org.apache.commons.lang3.SerializationUtils;
-
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -97,10 +94,10 @@ public class TestExample {
 
     //序列化
     void Serialize() {
-        SerializationUtils.serialize(new Person());
+//        SerializationUtils.serialize(new Person());
     }
 
-    //反序列化
+    //反序列化ss
     void Dserialize() {
     }
 

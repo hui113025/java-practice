@@ -19,6 +19,7 @@ public class DynamicProxy implements InvocationHandler {
         return (T) Proxy.newProxyInstance(target.getClass().getClassLoader(),target.getClass().getInterfaces(),this);
     }
 
+    //这个方法不是我们显示的去调用
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         before();
@@ -39,5 +40,6 @@ public class DynamicProxy implements InvocationHandler {
         DynamicProxy dynamicProxy = new DynamicProxy(new ManImpl());
         Man man = dynamicProxy.getProxy();
         man.look("JDK 动态代理");
+        System.out.println("结果："+man.getName("历史书"));
     }
 }

@@ -18,6 +18,11 @@ public class StaticProxy implements Man {
         after();
     }
 
+    @Override
+    public String getName(String bookName) {
+        return bookName;
+    }
+
     private void before(){
         System.out.println("before");
     }

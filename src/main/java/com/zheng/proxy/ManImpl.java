@@ -8,4 +8,8 @@ public class ManImpl implements Man {
     public void look(String bookName) {
         System.out.println("look " + bookName);
     }
+    @Override
+    public String getName(String bookName){
+        return bookName;
+    }
 }
